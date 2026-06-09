@@ -2,6 +2,12 @@
   "name": "docket2me-mcp-skill",
   "compatibility_date": "2026-06-05",
   "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "docket2me.samcarlton.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./docs",
     "not_found_handling": "404-page"

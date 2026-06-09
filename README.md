@@ -1,8 +1,27 @@
 # Docket2Me MCP Skill
 
-A portable agent skill for setting up the [Docket2Me MCP server](https://docket2me.ai/) in Codex, Claude Desktop, Claude Code, Cowork, and other MCP clients.
+A portable agent skill and talk setup page for connecting the [Docket2Me MCP server](https://docket2me.ai/) to Claude Cowork, OpenAI Codex, Claude Desktop, Claude Code, and other MCP clients.
 
-Live install page: <https://docket2me-mcp-skill.samcarlton.workers.dev/>
+Live talk setup page: <https://docket2me.samcarlton.com/>
+
+Workers preview URL: <https://docket2me-mcp-skill.samcarlton.workers.dev/>
+
+Claude Cowork short link: <https://docket2me.samcarlton.com/connect/claude/>
+
+## Talk Setup
+
+For lawyers, lead with Claude Cowork:
+
+1. Open <https://docket2me.samcarlton.com/>.
+2. Click **Connect to Claude Cowork**.
+3. Review the Docket2Me connector in Claude.
+4. Sign in with Docket2Me through the normal OAuth browser flow.
+
+For OpenAI Codex, copy the one-line setup command from the live page:
+
+```bash
+codex mcp add docket2me --url https://docket2me.ai/mcp && codex mcp login docket2me
+```
 
 ## Install
 
