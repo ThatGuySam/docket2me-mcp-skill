@@ -1,4 +1,12 @@
 const copyButtons = document.querySelectorAll("[data-copy-target]");
+const codexPromptLinks = document.querySelectorAll("[data-codex-prompt-target]");
+
+codexPromptLinks.forEach((link) => {
+  const prompt = document.getElementById(link.dataset.codexPromptTarget);
+  if (!prompt) return;
+
+  link.href = `codex://threads/new?prompt=${encodeURIComponent(prompt.textContent.trim())}`;
+});
 
 async function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) {

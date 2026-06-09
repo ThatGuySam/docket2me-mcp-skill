@@ -23,6 +23,11 @@ For OpenAI Codex, copy the one-line setup command from the live page:
 codex mcp add docket2me --url https://docket2me.ai/mcp && codex mcp login docket2me
 ```
 
+Or use the prompt-first path on the live page. It opens a new Codex Desktop
+thread with the setup prompt prefilled via `codex://threads/new?prompt=...`.
+OpenAI documents prompt-prefill deep links, but not a silent MCP-install deep
+link, so the page keeps setup reviewable.
+
 ## Install
 
 Use the open skills CLI for Codex:

@@ -168,6 +168,10 @@ h3 {
   padding: 0 1.05rem;
 }
 
+.small-button {
+  min-height: 2.7rem;
+}
+
 .button.primary {
   background: var(--navy);
   color: #fff;
@@ -313,6 +317,14 @@ a:focus-visible {
   margin-bottom: 0;
 }
 
+.panel-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
 .copy-button {
   min-width: 5.5rem;
   padding: 0 0.9rem;
@@ -370,7 +382,15 @@ dd {
 }
 
 .prompt-grid {
+  align-items: start;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.research-note {
+  max-width: 78rem;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 footer {
@@ -425,6 +445,14 @@ footer {
   .copy-panel-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .panel-actions {
+    width: 100%;
+  }
+
+  .panel-actions .button {
+    flex: 1 1 11rem;
   }
 
   .copy-button,

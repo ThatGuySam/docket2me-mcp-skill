@@ -46,7 +46,7 @@
               class="button primary"
               href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=Docket2Me&amp;connectorUrl=https%3A%2F%2Fdocket2me.ai%2Fmcp"
             >Connect to Claude Cowork</a>
-            <a class="button secondary" href="#codex">Copy Codex command</a>
+            <a class="button secondary" href="#codex">Open Codex prompt</a>
           </div>
           <p class="trust-note">
             You will review the connection and sign in with Docket2Me before any
@@ -101,24 +101,60 @@
 
       <section class="install" id="codex">
         <div class="section-heading">
-          <p class="eyebrow">Power user path</p>
+          <p class="eyebrow">Prompt-first path</p>
           <h2>OpenAI Codex</h2>
           <p>
-            Codex is best for the live technical demo or attendees comfortable
-            pasting one command into a terminal. OAuth still happens in the
-            browser.
+            For lawyers using Codex Desktop, start with a prefilled setup
+            prompt. Codex can add the Docket2Me MCP server, then OAuth still
+            happens in the browser.
           </p>
         </div>
-        <article class="copy-panel feature-copy">
-          <div class="copy-panel-header">
-            <div>
-              <h3>Copy this Codex setup command</h3>
-              <p>It adds the remote MCP server, then starts Docket2Me sign-in.</p>
+        <div class="prompt-grid">
+          <article class="copy-panel">
+            <div class="copy-panel-header">
+              <div>
+                <h3>Open this Codex setup prompt</h3>
+                <p>It starts a new Codex thread with the setup request filled in.</p>
+              </div>
+              <div class="panel-actions">
+                <a
+                  class="button primary small-button"
+                  href="codex://threads/new"
+                  data-codex-prompt-target="codex-prompt"
+                >Open in Codex</a>
+                <button type="button" class="copy-button" data-copy-target="codex-prompt">Copy</button>
+              </div>
             </div>
-            <button type="button" class="copy-button" data-copy-target="codex-command">Copy</button>
-          </div>
-          <pre><code id="codex-command">codex mcp add docket2me --url https://docket2me.ai/mcp &amp;&amp; codex mcp login docket2me</code></pre>
-        </article>
+            <pre><code id="codex-prompt">I want to connect Docket2Me to Codex for lawyer-supervised Oklahoma court research.
+
+Please add the Docket2Me remote MCP server:
+- Name: docket2me
+- URL: https://docket2me.ai/mcp
+- Auth: OAuth
+
+Use Codex's MCP setup flow. If you need to run terminal commands, run:
+codex mcp add docket2me --url https://docket2me.ai/mcp
+codex mcp login docket2me
+
+Do not inspect, print, or store secrets. Authentication should happen only through the normal browser sign-in flow.
+
+After setup, confirm Docket2Me is connected and suggest a safe public-record test query. Do not ask me to paste confidential client facts into the setup prompt.</code></pre>
+          </article>
+          <article class="copy-panel">
+            <div class="copy-panel-header">
+              <div>
+                <h3>Terminal fallback</h3>
+                <p>Use this for the live technical demo or CLI-first attendees.</p>
+              </div>
+              <button type="button" class="copy-button" data-copy-target="codex-command">Copy</button>
+            </div>
+            <pre><code id="codex-command">codex mcp add docket2me --url https://docket2me.ai/mcp &amp;&amp; codex mcp login docket2me</code></pre>
+          </article>
+        </div>
+        <p class="research-note">
+          Codex Desktop supports prefilled new-thread links. OpenAI does not
+          document a silent MCP-install link, so this keeps setup reviewable.
+        </p>
       </section>
 
       <section class="band compact">
